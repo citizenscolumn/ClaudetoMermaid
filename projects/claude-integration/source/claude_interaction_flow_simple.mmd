@@ -1,0 +1,17 @@
+sequenceDiagram
+    participant U as User
+    participant CC as Claude Code
+    participant MCP as MCP Servers
+    participant API as External APIs
+    participant OUT as Output
+    
+    U->>+CC: Research Request
+    CC->>+MCP: Activate MCP Servers
+    MCP->>+API: Perplexity Search
+    API-->>-MCP: Research Results
+    MCP->>+API: Firecrawl Scraping
+    API-->>-MCP: Web Data
+    MCP-->>-CC: Consolidated Data
+    CC->>+OUT: Generate Output
+    OUT-->>-CC: Confirmation
+    CC-->>-U: Complete Solution

@@ -1,0 +1,40 @@
+[
+  {
+    "title": "Simple Test",
+    "description": "Generated from simple_test.mmd",
+    "project": "Main Diagrams",
+    "type": "flowchart",
+    "created": "2025-08-06T09:12:47.881298",
+    "updated": "2025-08-06T09:12:47.881298",
+    "tags": [],
+    "author": "Claude Code",
+    "version": "1.0.0",
+    "mermaid_live_url": "https://mermaid.live/edit#eyJjb2RlIjogImdyYXBoIExSXG4gICAgQVtIZWxsb10gLS0+IEJbV29ybGRdIiwgIm1lcm1haWQiOiB7InRoZW1lIjogImRlZmF1bHQifSwgInVwZGF0ZUVkaXRvciI6IGZhbHNlfQ==",
+    "github_urls": {
+      "svg": "",
+      "png": "",
+      "source": "",
+      "raw_svg": "",
+      "raw_png": ""
+    }
+  },
+  {
+    "title": "Test Diagram",
+    "description": "Generated from test_diagram.mmd",
+    "project": "Main Diagrams",
+    "type": "flowchart",
+    "created": "2025-08-06T09:12:47.881702",
+    "updated": "2025-08-06T09:12:47.881702",
+    "tags": [],
+    "author": "Claude Code",
+    "version": "1.0.0",
+    "mermaid_live_url": "https://mermaid.live/edit#eyJjb2RlIjogImdyYXBoIFREXG4gICAgQVtNQ1AgUHJvamVjdF0gLS0+IEJbV2ViIFJlc2VhcmNoXVxuICAgIEEgLS0+IENbQ2hhdGJvdHNdXG4gICAgQSAtLT4gRFtZb3VUdWJlIFRvb2xzXVxuICAgIEIgLS0+IEVbRmlyZWNyYXdsXVxuICAgIEIgLS0+IEZbUGVycGxleGl0eV1cbiAgICBCIC0tPiBHW1RhdmlseV1cbiAgICBDIC0tPiBIW1dvcmRQcmVzcyBQbHVnaW5zXVxuICAgIEQgLS0+IElbVHJhbnNjcmlwdCBFeHRyYWN0aW9uXSIsICJtZXJtYWlkIjogeyJ0aGVtZSI6ICJkZWZhdWx0In0sICJ1cGRhdGVFZGl0b3IiOiBmYWxzZX0=",
+    "github_urls": {
+      "svg": "",
+      "png": "",
+      "source": "",
+      "raw_svg": "",
+      "raw_png": ""
+    }
+  }
+]

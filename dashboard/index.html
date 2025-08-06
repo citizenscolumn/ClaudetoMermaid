@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mermaid Diagrams Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .header h1 {
+            color: #2d3748;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header p {
+            color: #718096;
+            font-size: 1.1rem;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        
+        .stat {
+            text-align: center;
+            padding: 0.5rem 1rem;
+            background: rgba(103, 126, 234, 0.1);
+            border-radius: 8px;
+        }
+        
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #718096;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .search-bar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .search-bar input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .search-bar input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .filters {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 20px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            border-color: #667eea;
+            background: #667eea;
+            color: white;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .project-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid #667eea;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project-header {
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-meta {
+            font-size: 0.9rem;
+            color: #718096;
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .diagram-list {
+            max-height: 200px;
+            overflow-y: auto;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 0.5rem;
+            background: #f7fafc;
+        }
+        
+        .diagram-item {
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            padding: 0.5rem;
+            border-bottom: 1px solid #e2e8f0;
+            transition: background-color 0.2s ease;
+        }
+        
+        .diagram-item:last-child {
+            border-bottom: none;
+        }
+        
+        .diagram-item:hover {
+            background: rgba(103, 126, 234, 0.1);
+        }
+        
+        .diagram-name {
+            font-weight: 500;
+            color: #2d3748;
+        }
+        
+        .diagram-type {
+            font-size: 0.8rem;
+            color: #718096;
+            background: #e2e8f0;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+        }
+        
+        .diagram-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .action-btn {
+            padding: 0.3rem 0.6rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .view-btn {
+            background: #667eea;
+            color: white;
+        }
+        
+        .edit-btn {
+            background: #48bb78;
+            color: white;
+        }
+        
+        .raw-btn {
+            background: #ed8936;
+            color: white;
+        }
+        
+        .action-btn:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+        
+        .project-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: #2d3748;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+        }
+        
+        .github-link:hover {
+            background: #1a202c;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            margin-top: 3rem;
+            color: white;
+        }
+        
+        .footer a {
+            color: #90cdf4;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .filters {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🧜‍♀️ Mermaid Diagrams Dashboard</h1>
+        <p>Interactive visualization and management for your Mermaid diagram projects</p>
+        
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-number" id="total-projects">4</div>
+                <div class="stat-label">Projects</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number" id="total-diagrams">3</div>
+                <div class="stat-label">Diagrams</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">🤖</div>
+                <div class="stat-label">Claude Generated</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="🔍 Search projects and diagrams...">
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="flowchart">Flowcharts</button>
+                <button class="filter-btn" data-filter="sequence">Sequences</button>
+                <button class="filter-btn" data-filter="architecture">Architecture</button>
+                <button class="filter-btn" data-filter="workflow">Workflows</button>
+            </div>
+        </div>
+        
+        <div class="projects-grid" id="projects-grid">
+            
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title">Claude Integration</div>
+                </div>
+                <div class="project-meta">
+                    <span>📊 1 diagrams</span>
+                    <span>📅 2025-08-06</span>
+                </div>
+                <div class="diagram-list">
+                    
+                    <div class="diagram-item">
+                        <div>
+                            <div class="diagram-name">Claude Interaction Flow Simple</div>
+                            <div class="diagram-actions">
+                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/claude-integration/diagrams/claude_interaction_flow_simple.svg" target="_blank" class="action-btn view-btn">View</a>
+                                <a href="https://mermaid.live/edit#eyJjb2RlIjogInNlcXVlbmNlRGlhZ3JhbVxuICAgIHBhcnRpY2lwYW50IFUgYXMgVXNlclxuICAgIHBhcnRpY2lwYW50IENDIGFzIENsYXVkZSBDb2RlXG4gICAgcGFydGljaXBhbnQgTUNQIGFzIE1DUCBTZXJ2ZXJzXG4gICAgcGFydGljaXBhbnQgQVBJIGFzIEV4dGVybmFsIEFQSXNcbiAgICBwYXJ0aWNpcGFudCBPVVQgYXMgT3V0cHV0XG4gICAgXG4gICAgVS0+PitDQzogUmVzZWFyY2ggUmVxdWVzdFxuICAgIENDLT4+K01DUDogQWN0aXZhdGUgTUNQIFNlcnZlcnNcbiAgICBNQ1AtPj4rQVBJOiBQZXJwbGV4aXR5IFNlYXJjaFxuICAgIEFQSS0tPj4tTUNQOiBSZXNlYXJjaCBSZXN1bHRzXG4gICAgTUNQLT4+K0FQSTogRmlyZWNyYXdsIFNjcmFwaW5nXG4gICAgQVBJLS0+Pi1NQ1A6IFdlYiBEYXRhXG4gICAgTUNQLS0+Pi1DQzogQ29uc29saWRhdGVkIERhdGFcbiAgICBDQy0+PitPVVQ6IEdlbmVyYXRlIE91dHB1dFxuICAgIE9VVC0tPj4tQ0M6IENvbmZpcm1hdGlvblxuICAgIENDLS0+Pi1VOiBDb21wbGV0ZSBTb2x1dGlvbiIsICJtZXJtYWlkIjogeyJ0aGVtZSI6ICJkZWZhdWx0In0sICJ1cGRhdGVFZGl0b3IiOiBmYWxzZX0=" target="_blank" class="action-btn edit-btn">Edit</a>
+                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/claude-integration/exports/claude_interaction_flow_simple.svg" target="_blank" class="action-btn raw-btn">Raw</a>
+                            </div>
+                        </div>
+                        <span class="diagram-type">sequence</span>
+                    </div>
+                </div>
+                <div class="project-actions">
+                    <a href="https://github.com/citizenscolumn/ClaudetoMermaid/tree/main/projects/claude-integration" target="_blank" class="github-link">
+                        <span>📂</span> View on GitHub
+                    </a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title">examples</div>
+                </div>
+                <div class="project-meta">
+                    <span>📊 0 diagrams</span>
+                    <span>📅 2025-08-06</span>
+                </div>
+                <div class="diagram-list">
+                    <div class="diagram-item">No diagrams yet</div>
+                </div>
+                <div class="project-actions">
+                    <a href="https://github.com/citizenscolumn/ClaudetoMermaid/tree/main/projects/examples" target="_blank" class="github-link">
+                        <span>📂</span> View on GitHub
+                    </a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title">templates</div>
+                </div>
+                <div class="project-meta">
+                    <span>📊 0 diagrams</span>
+                    <span>📅 2025-08-06</span>
+                </div>
+                <div class="diagram-list">
+                    <div class="diagram-item">No diagrams yet</div>
+                </div>
+                <div class="project-actions">
+                    <a href="https://github.com/citizenscolumn/ClaudetoMermaid/tree/main/projects/templates" target="_blank" class="github-link">
+                        <span>📂</span> View on GitHub
+                    </a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title">Main Diagrams</div>
+                </div>
+                <div class="project-meta">
+                    <span>📊 2 diagrams</span>
+                    <span>📅 2025-08-06</span>
+                </div>
+                <div class="diagram-list">
+                    
+                    <div class="diagram-item">
+                        <div>
+                            <div class="diagram-name">Simple Test</div>
+                            <div class="diagram-actions">
+                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/main-diagrams/diagrams/simple_test.svg" target="_blank" class="action-btn view-btn">View</a>
+                                <a href="https://mermaid.live/edit#eyJjb2RlIjogImdyYXBoIExSXG4gICAgQVtIZWxsb10gLS0+IEJbV29ybGRdIiwgIm1lcm1haWQiOiB7InRoZW1lIjogImRlZmF1bHQifSwgInVwZGF0ZUVkaXRvciI6IGZhbHNlfQ==" target="_blank" class="action-btn edit-btn">Edit</a>
+                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/main-diagrams/exports/simple_test.svg" target="_blank" class="action-btn raw-btn">Raw</a>
+                            </div>
+                        </div>
+                        <span class="diagram-type">flowchart</span>
+                    </div>
+                    <div class="diagram-item">
+                        <div>
+                            <div class="diagram-name">Test Diagram</div>
+                            <div class="diagram-actions">
+                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/main-diagrams/diagrams/test_diagram.svg" target="_blank" class="action-btn view-btn">View</a>
+                                <a href="https://mermaid.live/edit#eyJjb2RlIjogImdyYXBoIFREXG4gICAgQVtNQ1AgUHJvamVjdF0gLS0+IEJbV2ViIFJlc2VhcmNoXVxuICAgIEEgLS0+IENbQ2hhdGJvdHNdXG4gICAgQSAtLT4gRFtZb3VUdWJlIFRvb2xzXVxuICAgIEIgLS0+IEVbRmlyZWNyYXdsXVxuICAgIEIgLS0+IEZbUGVycGxleGl0eV1cbiAgICBCIC0tPiBHW1RhdmlseV1cbiAgICBDIC0tPiBIW1dvcmRQcmVzcyBQbHVnaW5zXVxuICAgIEQgLS0+IElbVHJhbnNjcmlwdCBFeHRyYWN0aW9uXSIsICJtZXJtYWlkIjogeyJ0aGVtZSI6ICJkZWZhdWx0In0sICJ1cGRhdGVFZGl0b3IiOiBmYWxzZX0=" target="_blank" class="action-btn edit-btn">Edit</a>
+                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/main-diagrams/exports/test_diagram.svg" target="_blank" class="action-btn raw-btn">Raw</a>
+                            </div>
+                        </div>
+                        <span class="diagram-type">flowchart</span>
+                    </div>
+                </div>
+                <div class="project-actions">
+                    <a href="https://github.com/citizenscolumn/ClaudetoMermaid/tree/main/projects/main-diagrams" target="_blank" class="github-link">
+                        <span>📂</span> View on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>Generated by <strong>Claude Code</strong> with <a href="https://github.com/citizenscolumn/ClaudetoMermaid">Mermaid Integration</a></p>
+        <p>Last updated: 2025-08-06 09:12:47</p>
+    </div>
+    
+    <script>
+        // Search functionality
+        const searchInput = document.getElementById('search-input');
+        const projectsGrid = document.getElementById('projects-grid');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        
+        let currentFilter = 'all';
+        
+        searchInput.addEventListener('input', filterProjects);
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentFilter = btn.dataset.filter;
+                filterProjects();
+            });
+        });
+        
+        function filterProjects() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            projectCards.forEach(card => {
+                const title = card.querySelector('.project-title').textContent.toLowerCase();
+                const diagrams = Array.from(card.querySelectorAll('.diagram-name')).map(d => d.textContent.toLowerCase());
+                const types = Array.from(card.querySelectorAll('.diagram-type')).map(t => t.textContent.toLowerCase());
+                
+                const matchesSearch = !searchTerm || title.includes(searchTerm) || 
+                                    diagrams.some(d => d.includes(searchTerm)) ||
+                                    types.some(t => t.includes(searchTerm));
+                
+                const matchesFilter = currentFilter === 'all' || 
+                                    types.some(t => t.includes(currentFilter));
+                
+                card.style.display = matchesSearch && matchesFilter ? 'block' : 'none';
+            });
+        }
+        
+        // Add click handlers for diagram previews
+        document.addEventListener('DOMContentLoaded', () => {
+            const diagramItems = document.querySelectorAll('.diagram-item');
+            diagramItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    if (!e.target.classList.contains('action-btn')) {
+                        const viewBtn = item.querySelector('.view-btn');
+                        if (viewBtn) {
+                            window.open(viewBtn.href, '_blank');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

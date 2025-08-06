@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual environments (EXCLUDED from this repo)
+venv/
+yt-mcp-venv/
+node_modules/
+
+# IDE and system files
+.DS_Store
+.vscode/
+.idea/
+*.tmp
+.env
+
+# Backup and temporary files
+backup-*/
+*_backup.json
+*.log
+
+# Only include Mermaid diagram content in this repository

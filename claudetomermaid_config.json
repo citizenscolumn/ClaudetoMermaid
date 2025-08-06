@@ -1,0 +1,50 @@
+{
+  "repository": {
+    "owner": "citizenscolumn", 
+    "name": "ClaudetoMermaid",
+    "url": "https://github.com/citizenscolumn/ClaudetoMermaid",
+    "dashboard_url": "https://citizenscolumn.github.io/ClaudetoMermaid/dashboard/"
+  },
+  "projects": [
+    {
+      "name": "Claude Integration",
+      "description": "Complete Claude Code ecosystem diagrams showing MCP integration, workflows, and architecture",
+      "path": "Claude Integration",
+      "diagram_count": 10,
+      "types": ["architecture", "sequence", "flowchart"]
+    },
+    {
+      "name": "examples", 
+      "description": "Sample diagrams demonstrating various Mermaid diagram types and use cases",
+      "path": "examples",
+      "diagram_count": 8,
+      "types": ["flowchart", "architecture", "sequence"]
+    },
+    {
+      "name": "templates",
+      "description": "Reusable workflow templates for common diagram patterns", 
+      "path": "templates",
+      "diagram_count": 3,
+      "types": ["sequence", "flowchart"]
+    },
+    {
+      "name": "Main Diagrams",
+      "description": "Primary diagram collection with core architectural and workflow visualizations",
+      "path": ".",
+      "diagram_count": 9,
+      "types": ["architecture", "flowchart", "sequence"]
+    }
+  ],
+  "automation": {
+    "github_actions_enabled": true,
+    "auto_dashboard_update": true,
+    "mermaid_live_integration": true,
+    "github_pages_deployment": true
+  },
+  "generated": {
+    "timestamp": "2025-08-06T09:09:00Z",
+    "by": "Claude Code Mermaid Integration",
+    "total_diagrams": 65,
+    "total_projects": 4
+  }
+}

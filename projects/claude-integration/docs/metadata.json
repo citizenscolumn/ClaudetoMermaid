@@ -1,0 +1,21 @@
+[
+  {
+    "title": "Claude Interaction Flow Simple",
+    "description": "Generated from claude_interaction_flow_simple.mmd",
+    "project": "Claude Integration",
+    "type": "sequence",
+    "created": "2025-08-06T09:12:47.859349",
+    "updated": "2025-08-06T09:12:47.859349",
+    "tags": [],
+    "author": "Claude Code",
+    "version": "1.0.0",
+    "mermaid_live_url": "https://mermaid.live/edit#eyJjb2RlIjogInNlcXVlbmNlRGlhZ3JhbVxuICAgIHBhcnRpY2lwYW50IFUgYXMgVXNlclxuICAgIHBhcnRpY2lwYW50IENDIGFzIENsYXVkZSBDb2RlXG4gICAgcGFydGljaXBhbnQgTUNQIGFzIE1DUCBTZXJ2ZXJzXG4gICAgcGFydGljaXBhbnQgQVBJIGFzIEV4dGVybmFsIEFQSXNcbiAgICBwYXJ0aWNpcGFudCBPVVQgYXMgT3V0cHV0XG4gICAgXG4gICAgVS0+PitDQzogUmVzZWFyY2ggUmVxdWVzdFxuICAgIENDLT4+K01DUDogQWN0aXZhdGUgTUNQIFNlcnZlcnNcbiAgICBNQ1AtPj4rQVBJOiBQZXJwbGV4aXR5IFNlYXJjaFxuICAgIEFQSS0tPj4tTUNQOiBSZXNlYXJjaCBSZXN1bHRzXG4gICAgTUNQLT4+K0FQSTogRmlyZWNyYXdsIFNjcmFwaW5nXG4gICAgQVBJLS0+Pi1NQ1A6IFdlYiBEYXRhXG4gICAgTUNQLS0+Pi1DQzogQ29uc29saWRhdGVkIERhdGFcbiAgICBDQy0+PitPVVQ6IEdlbmVyYXRlIE91dHB1dFxuICAgIE9VVC0tPj4tQ0M6IENvbmZpcm1hdGlvblxuICAgIENDLS0+Pi1VOiBDb21wbGV0ZSBTb2x1dGlvbiIsICJtZXJtYWlkIjogeyJ0aGVtZSI6ICJkZWZhdWx0In0sICJ1cGRhdGVFZGl0b3IiOiBmYWxzZX0=",
+    "github_urls": {
+      "svg": "",
+      "png": "",
+      "source": "",
+      "raw_svg": "",
+      "raw_png": ""
+    }
+  }
+]
