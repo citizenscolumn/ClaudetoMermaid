@@ -138,7 +138,7 @@
         
         .project-header {
             display: flex;
-            justify-content: between;
+            justify-content: space-between;
             align-items: center;
             margin-bottom: 1rem;
         }
@@ -159,7 +159,7 @@
         }
         
         .diagram-list {
-            max-height: 200px;
+            max-height: 300px;
             overflow-y: auto;
             border: 1px solid #e2e8f0;
             border-radius: 6px;
@@ -169,7 +169,7 @@
         
         .diagram-item {
             display: flex;
-            justify-content: between;
+            justify-content: space-between;
             align-items: center;
             padding: 0.5rem;
             border-bottom: 1px solid #e2e8f0;
@@ -306,7 +306,7 @@
                 <div class="stat-label">Projects</div>
             </div>
             <div class="stat">
-                <div class="stat-number" id="total-diagrams">3</div>
+                <div class="stat-number" id="total-diagrams">27</div>
                 <div class="stat-label">Diagrams</div>
             </div>
             <div class="stat">
@@ -330,23 +330,67 @@
         
         <div class="projects-grid" id="projects-grid">
             
+            <!-- Claude Integration Project -->
             <div class="project-card">
                 <div class="project-header">
                     <div class="project-title">Claude Integration</div>
                 </div>
                 <div class="project-meta">
-                    <span>📊 1 diagrams</span>
+                    <span>📊 9 diagrams</span>
                     <span>📅 2025-08-06</span>
                 </div>
                 <div class="diagram-list">
-                    
                     <div class="diagram-item">
                         <div>
-                            <div class="diagram-name">Claude Interaction Flow Simple</div>
+                            <div class="diagram-name">Claude Ecosystem Overview</div>
                             <div class="diagram-actions">
-                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/claude-integration/diagrams/claude_interaction_flow_simple.svg" target="_blank" class="action-btn view-btn">View</a>
-                                <a href="https://mermaid.live/edit#eyJjb2RlIjogInNlcXVlbmNlRGlhZ3JhbVxuICAgIHBhcnRpY2lwYW50IFUgYXMgVXNlclxuICAgIHBhcnRpY2lwYW50IENDIGFzIENsYXVkZSBDb2RlXG4gICAgcGFydGljaXBhbnQgTUNQIGFzIE1DUCBTZXJ2ZXJzXG4gICAgcGFydGljaXBhbnQgQVBJIGFzIEV4dGVybmFsIEFQSXNcbiAgICBwYXJ0aWNpcGFudCBPVVQgYXMgT3V0cHV0XG4gICAgXG4gICAgVS0+PitDQzogUmVzZWFyY2ggUmVxdWVzdFxuICAgIENDLT4+K01DUDogQWN0aXZhdGUgTUNQIFNlcnZlcnNcbiAgICBNQ1AtPj4rQVBJOiBQZXJwbGV4aXR5IFNlYXJjaFxuICAgIEFQSS0tPj4tTUNQOiBSZXNlYXJjaCBSZXN1bHRzXG4gICAgTUNQLT4+K0FQSTogRmlyZWNyYXdsIFNjcmFwaW5nXG4gICAgQVBJLS0+Pi1NQ1A6IFdlYiBEYXRhXG4gICAgTUNQLS0+Pi1DQzogQ29uc29saWRhdGVkIERhdGFcbiAgICBDQy0+PitPVVQ6IEdlbmVyYXRlIE91dHB1dFxuICAgIE9VVC0tPj4tQ0M6IENvbmZpcm1hdGlvblxuICAgIENDLS0+Pi1VOiBDb21wbGV0ZSBTb2x1dGlvbiIsICJtZXJtYWlkIjogeyJ0aGVtZSI6ICJkZWZhdWx0In0sICJ1cGRhdGVFZGl0b3IiOiBmYWxzZX0=" target="_blank" class="action-btn edit-btn">Edit</a>
-                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/claude-integration/exports/claude_interaction_flow_simple.svg" target="_blank" class="action-btn raw-btn">Raw</a>
+                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/claude-integration/diagrams/claude_ecosystem_overview.svg" target="_blank" class="action-btn view-btn">View</a>
+                                <a href="https://mermaid.live/" target="_blank" class="action-btn edit-btn">Edit</a>
+                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/claude-integration/exports/claude_ecosystem_overview.svg" target="_blank" class="action-btn raw-btn">Raw</a>
+                            </div>
+                        </div>
+                        <span class="diagram-type">architecture</span>
+                    </div>
+                    <div class="diagram-item">
+                        <div>
+                            <div class="diagram-name">MCP Server Architecture</div>
+                            <div class="diagram-actions">
+                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/claude-integration/diagrams/mcp_server_architecture.svg" target="_blank" class="action-btn view-btn">View</a>
+                                <a href="https://mermaid.live/" target="_blank" class="action-btn edit-btn">Edit</a>
+                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/claude-integration/exports/mcp_server_architecture.svg" target="_blank" class="action-btn raw-btn">Raw</a>
+                            </div>
+                        </div>
+                        <span class="diagram-type">architecture</span>
+                    </div>
+                    <div class="diagram-item">
+                        <div>
+                            <div class="diagram-name">Chatbot Integration Flow</div>
+                            <div class="diagram-actions">
+                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/claude-integration/diagrams/chatbot_integration_flow.svg" target="_blank" class="action-btn view-btn">View</a>
+                                <a href="https://mermaid.live/" target="_blank" class="action-btn edit-btn">Edit</a>
+                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/claude-integration/exports/chatbot_integration_flow.svg" target="_blank" class="action-btn raw-btn">Raw</a>
+                            </div>
+                        </div>
+                        <span class="diagram-type">flowchart</span>
+                    </div>
+                    <div class="diagram-item">
+                        <div>
+                            <div class="diagram-name">Integration Metrics Dashboard</div>
+                            <div class="diagram-actions">
+                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/claude-integration/diagrams/integration_metrics_dashboard.svg" target="_blank" class="action-btn view-btn">View</a>
+                                <a href="https://mermaid.live/" target="_blank" class="action-btn edit-btn">Edit</a>
+                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/claude-integration/exports/integration_metrics_dashboard.svg" target="_blank" class="action-btn raw-btn">Raw</a>
+                            </div>
+                        </div>
+                        <span class="diagram-type">flowchart</span>
+                    </div>
+                    <div class="diagram-item">
+                        <div>
+                            <div class="diagram-name">Claude Interaction Flow (Fixed)</div>
+                            <div class="diagram-actions">
+                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/claude-integration/diagrams/claude_interaction_flow_fixed.svg" target="_blank" class="action-btn view-btn">View</a>
+                                <a href="https://mermaid.live/" target="_blank" class="action-btn edit-btn">Edit</a>
+                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/claude-integration/exports/claude_interaction_flow_fixed.svg" target="_blank" class="action-btn raw-btn">Raw</a>
                             </div>
                         </div>
                         <span class="diagram-type">sequence</span>
@@ -358,16 +402,61 @@
                     </a>
                 </div>
             </div>
+
+            <!-- Examples Project -->
             <div class="project-card">
                 <div class="project-header">
-                    <div class="project-title">examples</div>
+                    <div class="project-title">Examples</div>
                 </div>
                 <div class="project-meta">
-                    <span>📊 0 diagrams</span>
+                    <span>📊 8 diagrams</span>
                     <span>📅 2025-08-06</span>
                 </div>
                 <div class="diagram-list">
-                    <div class="diagram-item">No diagrams yet</div>
+                    <div class="diagram-item">
+                        <div>
+                            <div class="diagram-name">MCP Architecture</div>
+                            <div class="diagram-actions">
+                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/examples/diagrams/mcp_architecture.svg" target="_blank" class="action-btn view-btn">View</a>
+                                <a href="https://mermaid.live/" target="_blank" class="action-btn edit-btn">Edit</a>
+                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/examples/exports/mcp_architecture.svg" target="_blank" class="action-btn raw-btn">Raw</a>
+                            </div>
+                        </div>
+                        <span class="diagram-type">architecture</span>
+                    </div>
+                    <div class="diagram-item">
+                        <div>
+                            <div class="diagram-name">Research Workflow</div>
+                            <div class="diagram-actions">
+                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/examples/diagrams/research_workflow.svg" target="_blank" class="action-btn view-btn">View</a>
+                                <a href="https://mermaid.live/" target="_blank" class="action-btn edit-btn">Edit</a>
+                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/examples/exports/research_workflow.svg" target="_blank" class="action-btn raw-btn">Raw</a>
+                            </div>
+                        </div>
+                        <span class="diagram-type">sequence</span>
+                    </div>
+                    <div class="diagram-item">
+                        <div>
+                            <div class="diagram-name">Data Processing Pipeline</div>
+                            <div class="diagram-actions">
+                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/examples/diagrams/data_processing_pipeline.svg" target="_blank" class="action-btn view-btn">View</a>
+                                <a href="https://mermaid.live/" target="_blank" class="action-btn edit-btn">Edit</a>
+                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/examples/exports/data_processing_pipeline.svg" target="_blank" class="action-btn raw-btn">Raw</a>
+                            </div>
+                        </div>
+                        <span class="diagram-type">flowchart</span>
+                    </div>
+                    <div class="diagram-item">
+                        <div>
+                            <div class="diagram-name">Chatbot Development Flow</div>
+                            <div class="diagram-actions">
+                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/examples/diagrams/chatbot_development_flow.svg" target="_blank" class="action-btn view-btn">View</a>
+                                <a href="https://mermaid.live/" target="_blank" class="action-btn edit-btn">Edit</a>
+                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/examples/exports/chatbot_development_flow.svg" target="_blank" class="action-btn raw-btn">Raw</a>
+                            </div>
+                        </div>
+                        <span class="diagram-type">flowchart</span>
+                    </div>
                 </div>
                 <div class="project-actions">
                     <a href="https://github.com/citizenscolumn/ClaudetoMermaid/tree/main/projects/examples" target="_blank" class="github-link">
@@ -375,54 +464,93 @@
                     </a>
                 </div>
             </div>
-            <div class="project-card">
-                <div class="project-header">
-                    <div class="project-title">templates</div>
-                </div>
-                <div class="project-meta">
-                    <span>📊 0 diagrams</span>
-                    <span>📅 2025-08-06</span>
-                </div>
-                <div class="diagram-list">
-                    <div class="diagram-item">No diagrams yet</div>
-                </div>
-                <div class="project-actions">
-                    <a href="https://github.com/citizenscolumn/ClaudetoMermaid/tree/main/projects/templates" target="_blank" class="github-link">
-                        <span>📂</span> View on GitHub
-                    </a>
-                </div>
-            </div>
+
+            <!-- Main Diagrams Project -->
             <div class="project-card">
                 <div class="project-header">
                     <div class="project-title">Main Diagrams</div>
                 </div>
                 <div class="project-meta">
-                    <span>📊 2 diagrams</span>
+                    <span>📊 7 diagrams</span>
                     <span>📅 2025-08-06</span>
                 </div>
                 <div class="diagram-list">
-                    
                     <div class="diagram-item">
                         <div>
-                            <div class="diagram-name">Simple Test</div>
+                            <div class="diagram-name">API Authentication Sequence</div>
                             <div class="diagram-actions">
-                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/main-diagrams/diagrams/simple_test.svg" target="_blank" class="action-btn view-btn">View</a>
-                                <a href="https://mermaid.live/edit#eyJjb2RlIjogImdyYXBoIExSXG4gICAgQVtIZWxsb10gLS0+IEJbV29ybGRdIiwgIm1lcm1haWQiOiB7InRoZW1lIjogImRlZmF1bHQifSwgInVwZGF0ZUVkaXRvciI6IGZhbHNlfQ==" target="_blank" class="action-btn edit-btn">Edit</a>
-                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/main-diagrams/exports/simple_test.svg" target="_blank" class="action-btn raw-btn">Raw</a>
+                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/main-diagrams/diagrams/api_authentication_sequence.svg" target="_blank" class="action-btn view-btn">View</a>
+                                <a href="https://mermaid.live/" target="_blank" class="action-btn edit-btn">Edit</a>
+                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/main-diagrams/exports/api_authentication_sequence.svg" target="_blank" class="action-btn raw-btn">Raw</a>
+                            </div>
+                        </div>
+                        <span class="diagram-type">sequence</span>
+                    </div>
+                    <div class="diagram-item">
+                        <div>
+                            <div class="diagram-name">Hello World</div>
+                            <div class="diagram-actions">
+                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/main-diagrams/diagrams/hello_world.svg" target="_blank" class="action-btn view-btn">View</a>
+                                <a href="https://mermaid.live/" target="_blank" class="action-btn edit-btn">Edit</a>
+                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/main-diagrams/exports/hello_world.svg" target="_blank" class="action-btn raw-btn">Raw</a>
                             </div>
                         </div>
                         <span class="diagram-type">flowchart</span>
                     </div>
                     <div class="diagram-item">
                         <div>
+                            <div class="diagram-name">MCP Workflow</div>
+                            <div class="diagram-actions">
+                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/main-diagrams/diagrams/mcp_workflow.svg" target="_blank" class="action-btn view-btn">View</a>
+                                <a href="https://mermaid.live/" target="_blank" class="action-btn edit-btn">Edit</a>
+                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/main-diagrams/exports/mcp_workflow.svg" target="_blank" class="action-btn raw-btn">Raw</a>
+                            </div>
+                        </div>
+                        <span class="diagram-type">workflow</span>
+                    </div>
+                    <div class="diagram-item">
+                        <div>
+                            <div class="diagram-name">Project Architecture</div>
+                            <div class="diagram-actions">
+                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/main-diagrams/diagrams/project_architecture.svg" target="_blank" class="action-btn view-btn">View</a>
+                                <a href="https://mermaid.live/" target="_blank" class="action-btn edit-btn">Edit</a>
+                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/main-diagrams/exports/project_architecture.svg" target="_blank" class="action-btn raw-btn">Raw</a>
+                            </div>
+                        </div>
+                        <span class="diagram-type">architecture</span>
+                    </div>
+                    <div class="diagram-item">
+                        <div>
+                            <div class="diagram-name">Research Workflow</div>
+                            <div class="diagram-actions">
+                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/main-diagrams/diagrams/research_workflow.svg" target="_blank" class="action-btn view-btn">View</a>
+                                <a href="https://mermaid.live/" target="_blank" class="action-btn edit-btn">Edit</a>
+                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/main-diagrams/exports/research_workflow.svg" target="_blank" class="action-btn raw-btn">Raw</a>
+                            </div>
+                        </div>
+                        <span class="diagram-type">workflow</span>
+                    </div>
+                    <div class="diagram-item">
+                        <div>
                             <div class="diagram-name">Test Diagram</div>
                             <div class="diagram-actions">
                                 <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/main-diagrams/diagrams/test_diagram.svg" target="_blank" class="action-btn view-btn">View</a>
-                                <a href="https://mermaid.live/edit#eyJjb2RlIjogImdyYXBoIFREXG4gICAgQVtNQ1AgUHJvamVjdF0gLS0+IEJbV2ViIFJlc2VhcmNoXVxuICAgIEEgLS0+IENbQ2hhdGJvdHNdXG4gICAgQSAtLT4gRFtZb3VUdWJlIFRvb2xzXVxuICAgIEIgLS0+IEVbRmlyZWNyYXdsXVxuICAgIEIgLS0+IEZbUGVycGxleGl0eV1cbiAgICBCIC0tPiBHW1RhdmlseV1cbiAgICBDIC0tPiBIW1dvcmRQcmVzcyBQbHVnaW5zXVxuICAgIEQgLS0+IElbVHJhbnNjcmlwdCBFeHRyYWN0aW9uXSIsICJtZXJtYWlkIjogeyJ0aGVtZSI6ICJkZWZhdWx0In0sICJ1cGRhdGVFZGl0b3IiOiBmYWxzZX0=" target="_blank" class="action-btn edit-btn">Edit</a>
+                                <a href="https://mermaid.live/" target="_blank" class="action-btn edit-btn">Edit</a>
                                 <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/main-diagrams/exports/test_diagram.svg" target="_blank" class="action-btn raw-btn">Raw</a>
                             </div>
                         </div>
                         <span class="diagram-type">flowchart</span>
+                    </div>
+                    <div class="diagram-item">
+                        <div>
+                            <div class="diagram-name">My Project Architecture</div>
+                            <div class="diagram-actions">
+                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/main-diagrams/diagrams/my_project_arch.png" target="_blank" class="action-btn view-btn">View</a>
+                                <a href="https://mermaid.live/" target="_blank" class="action-btn edit-btn">Edit</a>
+                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/main-diagrams/exports/my_project_arch.png" target="_blank" class="action-btn raw-btn">Raw</a>
+                            </div>
+                        </div>
+                        <span class="diagram-type">architecture</span>
                     </div>
                 </div>
                 <div class="project-actions">
@@ -431,12 +559,64 @@
                     </a>
                 </div>
             </div>
+
+            <!-- Templates Project -->
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title">Templates</div>
+                </div>
+                <div class="project-meta">
+                    <span>📊 3 diagrams</span>
+                    <span>📅 2025-08-06</span>
+                </div>
+                <div class="diagram-list">
+                    <div class="diagram-item">
+                        <div>
+                            <div class="diagram-name">API Authentication</div>
+                            <div class="diagram-actions">
+                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/templates/diagrams/api_authentication.svg" target="_blank" class="action-btn view-btn">View</a>
+                                <a href="https://mermaid.live/" target="_blank" class="action-btn edit-btn">Edit</a>
+                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/templates/exports/api_authentication.svg" target="_blank" class="action-btn raw-btn">Raw</a>
+                            </div>
+                        </div>
+                        <span class="diagram-type">sequence</span>
+                    </div>
+                    <div class="diagram-item">
+                        <div>
+                            <div class="diagram-name">Deployment Flow</div>
+                            <div class="diagram-actions">
+                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/templates/diagrams/deployment_flow.svg" target="_blank" class="action-btn view-btn">View</a>
+                                <a href="https://mermaid.live/" target="_blank" class="action-btn edit-btn">Edit</a>
+                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/templates/exports/deployment_flow.svg" target="_blank" class="action-btn raw-btn">Raw</a>
+                            </div>
+                        </div>
+                        <span class="diagram-type">workflow</span>
+                    </div>
+                    <div class="diagram-item">
+                        <div>
+                            <div class="diagram-name">Error Handling</div>
+                            <div class="diagram-actions">
+                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/templates/diagrams/error_handling.svg" target="_blank" class="action-btn view-btn">View</a>
+                                <a href="https://mermaid.live/" target="_blank" class="action-btn edit-btn">Edit</a>
+                                <a href="https://raw.githubusercontent.com/citizenscolumn/ClaudetoMermaid/main/projects/templates/exports/error_handling.svg" target="_blank" class="action-btn raw-btn">Raw</a>
+                            </div>
+                        </div>
+                        <span class="diagram-type">flowchart</span>
+                    </div>
+                </div>
+                <div class="project-actions">
+                    <a href="https://github.com/citizenscolumn/ClaudetoMermaid/tree/main/projects/templates" target="_blank" class="github-link">
+                        <span>📂</span> View on GitHub
+                    </a>
+                </div>
+            </div>
+
         </div>
     </div>
     
     <div class="footer">
         <p>Generated by <strong>Claude Code</strong> with <a href="https://github.com/citizenscolumn/ClaudetoMermaid">Mermaid Integration</a></p>
-        <p>Last updated: 2025-08-06 09:12:47</p>
+        <p>Last updated: 2025-08-06 09:45:00</p>
     </div>
     
     <script>
